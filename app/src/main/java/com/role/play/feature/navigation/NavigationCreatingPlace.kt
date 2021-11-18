@@ -1,16 +1,13 @@
 package com.role.play.feature.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.role.play.feature.ui.screen.createplace.PersonsScreen
 import com.role.play.feature.ui.screen.createplace.RoomScreen
 import com.role.play.feature.ui.screen.createplace.SettingScreen
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import com.role.play.data.Person
 import com.role.play.feature.ui.screen.createplace.ViewModelCreatePlace
 import com.role.play.module.filter.getClassesPerson
 import com.role.play.module.filter.getRooms

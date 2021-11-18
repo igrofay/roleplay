@@ -1,6 +1,5 @@
 package com.role.play.feature.navigation
 
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -38,14 +37,13 @@ import com.role.play.feature.app.App
 import com.role.play.feature.ui.screen.description.DescriptionPlaceScreen
 import com.role.play.feature.ui.theme.Purple200
 import com.role.play.feature.ui.theme.oswald
+import com.role.play.module.database.WorkWithDatabase
 import com.role.play.module.web.WorkWithWeb
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.SimpleDateFormat
-import java.util.*
 
 @Composable
 fun NavigationApp(model: ViewModelMain = viewModel()) {
@@ -71,13 +69,14 @@ fun NavigationApp(model: ViewModelMain = viewModel()) {
                 visible = true
                 WorkWithWeb.server.getDescription(it).enqueue(object : Callback<Place>{
                     override fun onResponse(call: Call<Place>, response: Response<Place>) {
-                        response.body()?.let { it1 ->
-//                            model.viewModelScope.launch(Dispatchers.IO) {
-//                                WorkWithDatabase.insertPlace(
-//                                    it1 , model.listPlaces.size.toLong()
-//                                )
-//                            }
-                            model.listPlaces.add(it1)
+                        response.body()?.let { place ->
+                            place.id = model.listPlaces.size
+                            model.viewModelScope.launch(Dispatchers.IO) {
+                                WorkWithDatabase.insertPlace(
+                                    place , model.listPlaces.size
+                                )
+                            }
+                            model.listPlaces.add(place)
                             navHost.navigate(
                                 NavigationRoute.DescriptionPlaceRoute.routeArg(model.listPlaces.size-1)
                             ){

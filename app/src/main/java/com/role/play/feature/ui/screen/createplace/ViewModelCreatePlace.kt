@@ -1,6 +1,5 @@
 package com.role.play.feature.ui.screen.createplace
 
-import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import com.role.play.data.Person
 

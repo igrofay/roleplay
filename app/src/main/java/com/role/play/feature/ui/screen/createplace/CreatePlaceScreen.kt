@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.role.play.R
-import com.role.play.data.Person
 import com.role.play.data.Place
 import com.role.play.feature.app.App
 import com.role.play.feature.navigation.NavigationCreatePlace
@@ -55,7 +54,7 @@ fun CreatePlaceScreen(model: ViewModelCreatePlace = viewModel(), onClick: (place
                                  next(level)?.let {
                                      nav.navigate(it)
                                  } ?: onClick(
-                                     Place(model.setting!! , model.room!!, model.listPerson, "")
+                                     Place( model.setting!! , model.room!!, model.listPerson)
                                  )
                              }else{
                                  Toast.makeText(App.appContext, "Выберите значение", Toast.LENGTH_SHORT).show()

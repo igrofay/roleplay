@@ -173,7 +173,7 @@ fun DialogCreatePerson(listClasses: List<String>, close: ()-> Unit ,onClickCreat
                 TextButton(onClick = {
                     if (selectedClass !=null && item!=null && name.isNotEmpty()){
                         onClickCreate(
-                            Person(name , selectedClass!!, item!!)
+                            Person( name , selectedClass!!, item!!)
                         )
                     }else{
                         Toast.makeText(

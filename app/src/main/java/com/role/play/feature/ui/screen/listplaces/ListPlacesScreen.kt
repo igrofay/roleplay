@@ -27,13 +27,14 @@ import androidx.compose.ui.unit.sp
 import com.role.play.R
 import com.role.play.data.Place
 import com.role.play.feature.ui.theme.*
+import com.role.play.module.database.WorkWithDatabase
 import com.role.play.module.filter.settingList
 import com.skydoves.landscapist.glide.GlideImage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
-fun ListPlacesScreen(listPlaces : SnapshotStateList<Place>, onClickOpenPlace: (index: Int) -> Unit,onClickCreatePlace: ()-> Unit  ){
+fun ListPlacesScreen(listPlaces : SnapshotStateList<Place>, onClickOpenPlace: (index: Int) -> Unit, onClickCreatePlace: ()-> Unit  ){
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(onClickCreatePlace, Modifier.border(1.dp , Purple200 , CircleShape) ,
@@ -103,12 +104,11 @@ fun ListPlaces(listPlaces : SnapshotStateList<Place>, onClick: (index: Int) -> U
             visible = false
         }){
             visible = false
-//            scope.launch(Dispatchers.IO){
-//                WorkWithDatabase.delay(
-//
-//                )
-//            }
-            listPlaces.removeAt(indexDelay)
+            scope.launch(Dispatchers.IO){
+                WorkWithDatabase.delay(
+                    listPlaces.removeAt(indexDelay)
+                )
+            }
         }
 }
 

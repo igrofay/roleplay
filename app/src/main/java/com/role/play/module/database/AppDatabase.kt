@@ -5,8 +5,8 @@ import androidx.room.RoomDatabase
 import com.role.play.data.Person
 import com.role.play.data.Place
 
-//@Database(entities = [Place::class, Person::class], version = 1)
-//abstract class AppDatabase : RoomDatabase() {
-//    abstract fun placeDao(): PlaceDao
-//    abstract fun personDao() : PersonDao
-//}
+@Database(entities = [Place::class, Person::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun placeDao(): PlaceDao
+    abstract fun personDao() : PersonDao
+}
