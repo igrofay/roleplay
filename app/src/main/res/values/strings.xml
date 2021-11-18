@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">GAME\nRP</string>
+    <string name="start_game">НАЧНЁМ ИГРУ?</string>
+    <string name="create_you_location">СОЗДАЙ СВОЮ ИСТОРИЮ</string>
+    <string name="start">Начать</string>
+    <string name="message_null">ОЙ, У ВАС ПУСТО</string>
+    <string name="null_places">ПОКА НЕТ ЛОКАЦИЙ</string>
+    <string name="next">Продолжить</string>
+    <string name="choose_setting">ВЫБЕРИТЕ СЕТТИНГ</string>
+    <string name="choose_room">ВЫБЕРИТЕ МЕСТО</string>
+    <string name="create_person">Создайте персонажа</string>
+    <string name="close">Закрыть</string>
+    <string name="save">Сохранить</string>
+    <string name="name">Имя</string>
+    <string name="generate_place">ГЕНЕРАЦИЯ ЛАНДШАФТА…</string>
+    <string name="error_on_server">Проблема на сервере</string>
+    <string name="сlasses">Классификация</string>
+    <string name="item">Предмет</string>
+    <string name="location">Локация</string>
+    <string name="delay">Удалить</string>
+
+</resources>
